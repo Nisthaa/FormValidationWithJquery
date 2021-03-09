@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    
+        <link rel="stylesheet" href="style.css">
+</head>
+<div class="container">
+
+    <body>
+        <!-- onload="generateCapEqu()" -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h4 class="card-title mt-2">Registration Form</h4>
+                    </header>
+                    <form method="GET"  class="card-body needs-validation" novalidate name="registration" autocomplete="off" >
+                        <!--needs-validation novalidate -->
+                        <div class="info">
+                            <div class="form-group row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">First name </label>
+                                    <input id="fname" name="firstname" type="text" minlength="2" class="form-control name" autocomplete="false" required>
+                                    <div id="fnamefeed" class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Last name</label>
+                                    <input id="lname" name="lastname" type="text" minlength="3" class="form-control name" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="">Email</label> <br>
+                                <input class="form-control" type="email" name="email" id="email"
+                                    placeholder="example@gmail.com" inputmode="email" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    
+                            </div>
+                            <div class="form-group row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="">Primary Phone</label> <br>
+                                    <input class="form-control" type="number" minlength="10"  inputmode="numeric"
+                                        id="phn" name="phn" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-group" for="">Alternate Phone</label>
+                                    <input class="form-control" type="number" pattern="^\d{10}$" inputmode="numeric"
+                                        id="phn2" name="phn2">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Password</label>
+                                    <input class="form-control" type="password" minlength="5" name="pwd" id="pwd" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Confirm Password</label>
+                                    <input class="form-control" type="password" name="pwd2" minlength="5" id="pwd2" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="form-label" for="">Birth Date</label>
+                                    <input class="form-control" type="date" id="dob" name="dob" required>
+                                    
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <div class="radio-inline">
+                                    <label class="form-label" for="gender" id="gender"  >Gender</label><br>
+                                    <input class="form-check-input" type="radio" name="gender" id="msex" value="male" required >
+                                    <label class="form-check-label" for="">Male</label>
+                                </div>
+                                <div class="radio-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="fsex" value="female">
+                                    <label class="form-check-label" for="">Female</label>
+                                </div>
+                                <div class="radio-inline">
+                                    <input class="form-check-input" type="radio" name="gender"  id="osex" value="other">
+                                    <label class="form-check-label" for="">Other</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="">Current Address</label>
+                                <textarea class="form-control" name="addr" id="addr" cols="25" rows="2" minlength="5" required></textarea>
+                            </div>
+                            <div class="form-group row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="">City</label>
+                                    <input class="form-control" type="text" name="city" id="city" minlength="3" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="">State</label>
+                                    <input class="form-control" type="text" name="state" id="state" minlength="3" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="">Country</label>
+                                    <select class="form-select" name="country" id="con">
+                                        <option selected="" value="0">Please select a country</option>
+                                        <option value="IND">India</option>
+                                        <option value="AUS">Australia</option>
+                                        <option value="CAN">Canada</option>
+                                        <option value="RAS">Russia</option>
+                                        <option value="US">USA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="">Zip Code</label>
+                                    <input class="form-control" type="number" name="zip" id="zip" minlength="3" required>
+                                </div>
+                            </div>
+
+                            <!-- <div class="form-group">
+                                <label class="form-label" for="">Permanent Address</label>
+                                <textarea class="form-control" name="addr" id="addr2" cols="25" rows="2"></textarea>
+                            </div>
+                            <div class="form-group row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="">City</label>
+                                    <input class="form-control" type="text" name="city" id="city2">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="">State</label>
+                                    <input class="form-control" type="text" name="state" id="state2">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="">Country</label>
+                                    <select class="form-select" name="country" id="con2">
+                                        <option selected="" value="0">Please select a country</option>
+                                        <option value="IND">India</option>
+                                        <option value="AUS">Australia</option>
+                                        <option value="CAN">Canada</option>
+                                        <option value="RAS">Russia</option>
+                                        <option value="US">USA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="">Zip Code</label>
+                                    <input class="form-control" type="number" name="zip" id="zip2">
+                                </div>
+                            </div> -->
+
+                            <div class="form-group">
+                                <label class="form-label" for="">Interests?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Sports
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Books
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Computer & Software
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Fashion
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Photography
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Food
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                        checked>
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        All
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Subscribe to the
+                                    Newsletter?</label>
+                            </div>
+
+                            <div class="form-group captcha">
+                                <h6 class="form-label">Please solve equation to submit</h6>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <label class="form-group" style="font-size: x-large;" id="captcha_equ" ></label>
+                                        <div id="message" class="msg">Please verify.</div>
+                                        <div id="success" class="valid-feedback msg">Validation complete ✔ </div>
+                                        <div id="fail" class="invalid-feedback msg">Validation failed ❌</div>
+                                    </div>
+                                    <label class="form-group col-md-1" style="font-size:xx-large;" id="equal">=</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control col-md-2" type="number" name="" id="answer">
+                                    </div>
+                                    <div class="col-md-2">    
+                                        <span class="reset" style="font-size:x-large;"><i class="fa fa-undo"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                    <button type="submit" class="btn btn-outline-danger">Submit</button>
+                                    <button type="reset" class="btn btn-outline-primary reset">Reset</button>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="validate.js"></script>
+        <script>
+            $("#fname").keyup(function(){
+                $("#fnamefeed").val("Please enter name");
+            })
+            
+        </script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+      <script src="validate.js"></script>
+
+    </body>
+</div>
+
+</html>
